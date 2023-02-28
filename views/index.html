@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Angel's Work</title>
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
+    <link href="https://getbootstrap.com/docs/4.0/examples/navbar-top/navbar-top.css" rel="stylesheet">
+   </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <a class="navbar-brand" href="/">Angel's Work</a>
+      <div class="ml-auto">
+        <a class="btn btn-lg btn-outline-primary" href="/admin" role="button">天使長の部屋</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="jumbotron">
+        <h1>反省文</h1>
+        <p class="lead">反省文を書きましょう。</p>
+        <p>相手は天使長です。反省文は<b>必ず</b>見てはくれますが、許されるかどうかは…</p>
+        {{message}}
+        <form method="post" action="/preview?token={{token}}">
+          <input type="text" placeholder="名前" name="name" pattern="[^&]+" required> 
+          <textarea name="body" placeholder="反省文" cols="100" rows="5"></textarea>
+          <button class="btn btn-outline-success">送る</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

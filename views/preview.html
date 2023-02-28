@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Preview</title>
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
+    <link href="https://getbootstrap.com/docs/4.0/examples/navbar-top/navbar-top.css" rel="stylesheet">
+   </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <a class="navbar-brand" href="/">Angel's Work</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+
+    <div class="container">
+      <div class="jumbotron">
+        <h1>反省文</h1>
+        <p class="lead">名前:{{name}}</p>
+          <p>{{ body|safe}}</p>
+        </div>
+        <form method="post" action="/report/{{stat_id}}">
+          <input type="hidden" name="stat_id" value="{{stat_id}}">
+          <button type="submit" class="btn btn-primary">提出する</button>
+        </form>
+    </div>
+  </body>
+</html>
