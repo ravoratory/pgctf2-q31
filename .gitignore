@@ -2,6 +2,3 @@ data/
 cache/
 database.db
 __pycache__/
-
-# crawling script
-angel.py
